@@ -1,17 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react"
+import ReactDom from "react-dom"
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// My first componenent
+function Greeting(){
+  return  (
+    <div>
+      <h2>I'm Freek and this is my first component</h2>
+      <Message />
+      <Message2 />
+    </div>
+  );
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const Message = () =>{
+  return (
+    <h4>This is my nested message</h4>
+    // <Message2 />
+  );
+} 
+
+const Message2 = () =>{
+  return (
+    <h5>This is my second nested message</h5>
+  );
+}
+
+//ARROW FUNCTION
+// const Greeting = () =>{
+//   return React.createElement(
+//     "div",
+//     {},
+//     React.createElement("h1", {}, "I'm Freek")
+//   );
+// }
+
+//render my component
+ReactDom.render(<Greeting/>, document.getElementById("root"));
